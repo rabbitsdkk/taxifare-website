@@ -42,9 +42,9 @@ See ? No need to load a `model.joblib` file in this app, we do not even need to 
 🤔 How could we call our API ? Off course... The `requests` package 💡
 '''
 
-#url = 'https://taxifare.lewagon.ai/predict'
+url = 'https://taxifare.lewagon.ai/predict'
 
-url = 'https://taxifare-770667102968.northamerica-south1.run.app/predict'
+#url = 'https://taxifare-770667102968.northamerica-south1.run.app/predict'
 
 if url == 'https://taxifare.lewagon.ai/predict':
 
