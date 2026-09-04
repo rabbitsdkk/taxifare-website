@@ -25,14 +25,15 @@ Either as with the title by just creating a string (or an f-string). Or as with 
 - passenger count
 '''
 st.title('TaxiFare Calculation')
-#import datetime from datetime
-st.date_input('Pickup_date')
-st.time_input('Pickup_time')
-st.number_input('pickup longitude')
-st.number_input('pickup latitude')
-st.number_input('dropoff longitude')
-st.number_input('dropoff latitude')
-st.number_input('passenger count')
+from datetime import datetime
+pickup_date = st.date_input('Pickup_date')
+pickup_time = st.time_input('Pickup_time')
+pickup_longitude = st.number_input('pickup longitude')
+pickup_latitude = st.number_input('pickup latitude')
+dropoff_longitude = st.number_input('dropoff longitude')
+dropoff_latitude = st.number_input('dropoff latitude')
+passenger_count = st.number_input('passenger count')
+pickup_datetime = datetime.combine(pickup_date, pickup_time)
 '''
 ## Once we have these, let's call our API in order to retrieve a prediction
 
@@ -57,3 +58,18 @@ if url == 'https://taxifare.lewagon.ai/predict':
 
 ## Finally, we can display the prediction to the user
 '''
+params = {
+    "pickup_datetime": pickup_datetime,
+    "pickup_longitude": pickup_longitude,
+    "pickup_latitude": pickup_latitude,
+    "dropoff_longitude": dropoff_longitude,
+    "dropoff_latitude": dropoff_latitude,
+    "passenger_count": passenger_count,
+}
+
+
+import requests
+
+request = requests.get(url,params=params)
+response = request.json()['fare']
+st.markdown(f"fare estimate:{response:.2f}")
