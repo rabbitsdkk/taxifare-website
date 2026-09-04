@@ -25,7 +25,7 @@ Either as with the title by just creating a string (or an f-string). Or as with 
 - passenger count
 '''
 st.title('TaxiFare Calculation')
-import datetime from datetime
+#import datetime from datetime
 st.date_input('Pickup_date')
 st.time_input('Pickup_time')
 st.number_input('pickup longitude')
