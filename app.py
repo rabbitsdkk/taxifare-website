@@ -4,6 +4,9 @@ import streamlit as st
 # TaxiFareModel front
 '''
 
+st.page_link("pages/page_1.py", label="Greetings", icon="🗺️")
+st.page_link("pages/page_2.py", label="About", icon="ℹ️")
+
 st.markdown('''
 Remember that there are several ways to output content into your web page...
 
