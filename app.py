@@ -71,6 +71,6 @@ params = {
 import requests
 
 request = requests.get(url,params=params)
-response = request.json()['fare']
+#response = request.json()
 #st.markdown(f"fare estimate:{response:.2f}")
 st.write("API response:", request.json())
